@@ -49,33 +49,30 @@ img {
   pointer-events: none;
 }
 
+[data-profile].sibling-far img {
+  filter: grayscale(80%);
+  /* scale: .8; */
+}
+
+[data-profile].sibling-close img {
+  filter: grayscale(40%);
+}
+
+
 @media (hover:hover) and (pointer: fine) {
   [data-profile]:hover {
     cursor: pointer;
   }
-}
 
-[data-profile].sibling-far img {
-  filter: grayscale(80%);
-  /* scale: .8; */
-  /* width: 6em; */
-  /* top: -.8em; */
-}
 
-[data-profile].sibling-close img {
-  /* width: 7em; */
-  filter: grayscale(40%);
-  /* scale: .9; */
-  /* top: -.6em; */
-}
+  [data-profile].hover {
+    top: -.2em;
 
-[data-profile].hover{
-  top: -.2em;
+  }
 
-}
-[data-profile].hover img {
-  /* width: 8em; */
-  /* transition: all .4s cubic-bezier(.16, 1, .3, 1); */
-  /* scale: 1.1; */
-  filter: grayscale(0%);
+  [data-profile].hover img {
+    /* transition: filter .2s ease-in; */
+    /*don't use transition when using filter it causes a blur overlay on the image - makes it look unpolished*/
+    filter: grayscale(0%);
+  }
 }
